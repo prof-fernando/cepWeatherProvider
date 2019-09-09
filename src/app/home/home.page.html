@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Buscador de Cep
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="buscarCep()">
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="termo" name="termo" placeholder="buscar...">
+      </ion-input>
+      <ion-icon name="search" (click)="buscarCep()"> </ion-icon>
+    </ion-item>
+  </form>
+  <ion-card *ngIf="resultado">
+    <ion-card-header>
+      <ion-card-title>Resultado para {{ resultado.cep }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ resultado.localidade }} / {{ resultado.uf }}
+      <ion-button href="previsao/{{ resultado.localidade }}" expand="block">
+        Ver previsão tempo
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

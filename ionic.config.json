@@ -1,0 +1,7 @@
+{
+  "name": "cep",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
